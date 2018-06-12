@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <LinearLayout
+        android:id="@+id/ll_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_header_height"
+        android:background="@color/colorPrimary"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/header_image"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            android:src="@drawable/ic_female" />
+
+        <TextView
+            android:id="@+id/header_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            android:text="Manilal Kasera"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <TextView
+            android:id="@+id/header_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="14kasera.mani@gmail.com" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/header_edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="8dp"
+            android:padding="16dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/pencil_white"/>
+
+    </RelativeLayout>
+</FrameLayout>

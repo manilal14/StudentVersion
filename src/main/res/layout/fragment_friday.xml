@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".TimeTableRelated.FridayFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/ef1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:singleLine="true"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/edit_timetable_outline"
+                android:gravity="center"
+                android:hint="FridayP1"
+                android:padding="8dp"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/ef2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:singleLine="true"
+                android:background="@drawable/edit_timetable_outline"
+                android:gravity="center"
+                android:hint="FridayP2"
+                android:padding="8dp"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/ef3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:singleLine="true"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/edit_timetable_outline"
+                android:gravity="center"
+                android:hint="FridayP3"
+                android:padding="8dp"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/ef4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:singleLine="true"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/edit_timetable_outline"
+                android:gravity="center"
+                android:hint="FridayP4"
+                android:padding="8dp"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/ef5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:singleLine="true"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/edit_timetable_outline"
+                android:gravity="center"
+                android:hint="FridayP5"
+                android:padding="8dp"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/ef6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:singleLine="true"
+                android:layout_marginBottom="32dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/edit_timetable_outline"
+                android:gravity="center"
+                android:hint="FridayP6"
+                android:padding="8dp"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

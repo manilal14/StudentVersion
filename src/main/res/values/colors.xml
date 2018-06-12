@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#424242</color>
+    <color name="colorPrimaryDark">#212121</color>
+    <color name="colorAccent">#0489B1</color>
+    <color name="white">#ffffff</color>
+    <color name="border">#5c5c3d</color>
+    <color name="black">#000000</color>
+    <color name="link_color">#2ECCFA</color>
+    <color name="sub_color">#01DF74</color>
+    <color name="dark_blue">#0B2161</color>
+    <color name="sky_blue">#01DFD7</color>
+    <color name="roll_no_color">#EB984E</color>
+    <color name="green_tick">#088A08</color>
+    <color name="failed_red">#B40404</color>
+    <color name="red">#FF0000</color>
+    <color name="TimeTableBackgroundColor">#F5BCA9</color>
+</resources>

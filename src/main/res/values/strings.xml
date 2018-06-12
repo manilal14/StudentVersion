@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">StudentVersion</string>
+    <string name="title_activity_news_feed">News Feed</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="mp1_key">Monday P1 Key</string>
+    <string name="mp2_key">Monday P2 Key</string>
+    <string name="mp3_key">Monday P3 Key</string>
+    <string name="mp4_key">Monday P4 Key</string>
+    <string name="mp5_key">Monday P5 Key</string>
+    <string name="mp6_key">Monday P6 Key</string>
+
+    <string name="tp1_key">Tuesday P1 Key</string>
+    <string name="tp2_key">Tuesday P2 Key</string>
+    <string name="tp3_key">Tuesday P3 Key</string>
+    <string name="tp4_key">Tuesday P4 Key</string>
+    <string name="tp5_key">Tuesday P5 Key</string>
+    <string name="tp6_key">Tuesday P6 Key</string>
+
+    <string name="wp1_key">Wednesday P1 Key</string>
+    <string name="wp2_key">Wednesday P2 Key</string>
+    <string name="wp3_key">Wednesday P3 Key</string>
+    <string name="wp4_key">Wednesday P4 Key</string>
+    <string name="wp5_key">Wednesday P5 Key</string>
+    <string name="wp6_key">Wednesday P6 Key</string>
+
+    <string name="thp1_key">Thrusday P1 Key</string>
+    <string name="thp2_key">Thrusday P2 Key</string>
+    <string name="thp3_key">Thrusday P3 Key</string>
+    <string name="thp4_key">Thrusday P4 Key</string>
+    <string name="thp5_key">Thrusday P5 Key</string>
+    <string name="thp6_key">Thrusday P6 Key</string>
+
+    <string name="fp1_key">Friday P1 Key</string>
+    <string name="fp2_key">Friday P2 Key</string>
+    <string name="fp3_key">Friday P3 Key</string>
+    <string name="fp4_key">Friday P4 Key</string>
+    <string name="fp5_key">Friday P5 Key</string>
+    <string name="fp6_key">Friday P6 Key</string>
+
+    <string name="not_connected_to_internet">No Internet Connection, Try to refresh</string>
+    <string name="connection_error">Connection Timeout</string>
+    <string name="no_connection">No Connection with Database</string>
+    <string name="auth_failure_error">AuthFailureError</string>
+    <string name="server_error">Server Error</string>
+    <string name="network_error">Network Error</string>
+    <string name="parse_error">Parse Error</string>
+    <string name="volley_error">Volly Error</string>
+    <string name="female">female</string>
+    <string name="male">male</string>
+    <string name="splash_screen_string">StudentApp</string>
+    <string name="check_past_attendance">Check Past Attendance</string>
+    <string name="date">Date</string>
+    <string name="period">Period</string>
+    <string name="Class">Class</string>
+    <string name="done">done</string>
+    <string name="cancel">cancel</string>
+
+
+</resources>

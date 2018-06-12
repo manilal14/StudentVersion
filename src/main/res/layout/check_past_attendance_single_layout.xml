@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp">
+
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_roll_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4"
+
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:background="@drawable/circle"/>
+
+        <TextView
+            android:id="@+id/tv_student_name"
+            android:layout_marginLeft="12dp"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Manilal Kasera"
+            android:fontFamily="serif-monospace"
+            android:textStyle="bold"
+            android:textSize="16dp"/>
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_close"
+            android:background="@color/red"/>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
