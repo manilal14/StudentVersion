@@ -59,6 +59,8 @@
     <string name="Class">Class</string>
     <string name="done">done</string>
     <string name="cancel">cancel</string>
+    <string name="low_attendance_message">Your attendance is low !</string>
+    <string name="good_attendance_message">Good, maintain same attendance</string>
 
 
 </resources>

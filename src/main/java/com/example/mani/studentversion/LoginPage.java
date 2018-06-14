@@ -192,6 +192,7 @@ public class LoginPage extends AppCompatActivity {
 
                                 String college_id   = studentObj.getString("college_id");
                                 String branch_id    = studentObj.getString("branch_id");
+                                String class_id     = studentObj.getString("class_id");
 
                                 String college_name = studentObj.getString("college_name");
                                 String branch_name  = studentObj.getString("branch_name");
@@ -211,7 +212,7 @@ public class LoginPage extends AppCompatActivity {
                                 LoginSessionManager session = new LoginSessionManager(LoginPage.this);
 
                                 session.createLoginSession(student_id,password,
-                                        college_id,branch_id,
+                                        college_id,branch_id,class_id,
                                         college_name,branch_name,class_name,semester,
                                         name,dob,contact_no,email,gender);
 

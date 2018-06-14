@@ -7,6 +7,8 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,12 +34,15 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static com.example.mani.studentversion.CommonVariablesAndFunctions.BASE_URL_ATTENDANCE;
 import static com.example.mani.studentversion.CommonVariablesAndFunctions.maxNoOfTries;
 import static com.example.mani.studentversion.CommonVariablesAndFunctions.retrySeconds;
 import static com.example.mani.studentversion.LoginSessionManager.KEY_BRANCH_ID;
+import static com.example.mani.studentversion.LoginSessionManager.KEY_CLASS;
+import static com.example.mani.studentversion.LoginSessionManager.KEY_CLASS_ID;
 import static com.example.mani.studentversion.LoginSessionManager.KEY_COLLEGE_ID;
 import static com.example.mani.studentversion.LoginSessionManager.KEY_SEMESTER;
 import static com.example.mani.studentversion.LoginSessionManager.KEY_STUDENT_ID;
@@ -76,16 +81,11 @@ public class CheckAttendance extends AppCompatActivity {
         mSem_id     = Integer.parseInt(studentDetails.get(KEY_SEMESTER));
         mStudent_id = Integer.parseInt(studentDetails.get(KEY_STUDENT_ID));
 
-        /*mCollege_id  = getIntent().getIntExtra("college_id",-1);
-        mBranch_id   = getIntent().getIntExtra("branch_id",-1);
-        mSem_id      = getIntent().getIntExtra("sem_id",-1);
-        mStudent_id  = getIntent().getIntExtra("student_id",-1);*/
-
-       Toast.makeText(CheckAttendance.this,"college_id "+mCollege_id +
+        /*Toast.makeText(CheckAttendance.this,"college_id "+mCollege_id +
                 " branch_id "+mBranch_id +
                 " sem_id "+mSem_id +
                 " student_id "+mStudent_id,
-                Toast.LENGTH_SHORT).show();
+                Toast.LENGTH_SHORT).show();*/
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             loadAttendance();
@@ -95,6 +95,45 @@ public class CheckAttendance extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_check_attendance,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        switch (id){
+
+            case R.id.menu_past_attendace :
+
+                List<Subject> subjectList = new ArrayList<>();
+                HashMap<String,String> studentDetail = mLoginSession.getStudentDetailsFromSharedPreference();
+
+                int class_id      = Integer.parseInt(studentDetail.get(KEY_CLASS_ID));
+                String semester   = studentDetail.get(KEY_SEMESTER);
+                String class_name = studentDetail.get(KEY_CLASS);
+
+                Subject subject = new Subject(class_id,class_name,semester);
+
+                subjectList.add(subject);
+
+                DialogCheckPastAttendance d = new DialogCheckPastAttendance(CheckAttendance.this,subjectList);
+                d.setDialogBox();
+
+                break;
+
+            case R.id.menu_more_info :
+                break;
+
+
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void loadAttendance() {
@@ -204,16 +243,14 @@ public class CheckAttendance extends AppCompatActivity {
         if(percentage < 75.00){
             pieChart.setCenterTextColor(Color.RED);
             tv_overall.setTextColor(Color.RED);
-            tv_overall.setText("Overall Attendence is Low !");
+            tv_overall.setText(R.string.low_attendance_message);
         }
         else{
             pieChart.setCenterTextColor(Color.CYAN);
             tv_overall.setTextColor(Color.BLUE);
-            tv_overall.setText("Good, maintain same attendance");
+            tv_overall.setText(R.string.good_attendance_message);
 
         }
-
-
         yValues.add(new PieEntry(totalHrsPresent,"Present"));
         yValues.add(new PieEntry(totalHrsAbsent,"Absent"));
 

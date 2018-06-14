@@ -48,10 +48,11 @@
             android:theme="@style/Base.Theme.AppCompat" />
         <activity
             android:name=".AttendanceRelated.CheckAttendance"
+            android:label="Overall Attendance"
             android:parentActivityName=".NewsRelaled.NewsFeed">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.mani.studentVersion.NewsRelaled.NewsFeed" />
+                android:value="com.example.mani.studentversion.NewsRelaled.NewsFeed" />
         </activity>
         <activity android:name=".LoginPage" />
         <activity
@@ -60,7 +61,7 @@
             android:parentActivityName=".NewsRelaled.NewsFeed">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.mani.studentVersion.NewsRelaled.NewsFeed" />
+                android:value="com.example.mani.studentversion.NewsRelaled.NewsFeed" />
         </activity>
         <activity
             android:name=".AttendanceRelated.CheckPastAttendance"

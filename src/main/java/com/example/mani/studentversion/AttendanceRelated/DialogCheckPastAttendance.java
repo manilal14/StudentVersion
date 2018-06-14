@@ -78,8 +78,8 @@ public class DialogCheckPastAttendance {
         for(int i=0;i<subjectList.size();i++){
 
             String sem        = subjectList.get(i).getSemester();
-            String class_name = subjectList.get(i).getClassName();
-            classes_for_spinner.add(sem +"   "+ class_name);
+            String class_name = subjectList.get(i).getClass_name();
+            classes_for_spinner.add("Sem-"+sem +"  "+ class_name);
 
         }
 

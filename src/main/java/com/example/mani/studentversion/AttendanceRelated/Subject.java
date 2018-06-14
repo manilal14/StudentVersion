@@ -2,30 +2,17 @@ package com.example.mani.studentversion.AttendanceRelated;
 
 public class Subject {
 
-    private int subject_id;
     private int class_id;
     private String class_name;
-    private String subject_name;
     private String semester;
 
 
-    public Subject(int subject_id, int class_id, String class_name, String subject_name, String semester) {
-        this.subject_id = subject_id;
-        this.class_id = class_id;
+    public Subject(int class_id, String class_name, String semester) {
 
+        this.class_id = class_id;
         this.class_name = class_name;
-        this.subject_name = subject_name;
         this.semester = semester;
     }
-
-    public int getSubject_id() {
-        return subject_id;
-    }
-
-    public void setSubject_id(int subject_id) {
-        this.subject_id = subject_id;
-    }
-
 
     public int getClass_id() {
         return class_id;
@@ -35,15 +22,19 @@ public class Subject {
         this.class_id = class_id;
     }
 
-    public String getClassName() {
+    public String getClass_name() {
         return class_name;
     }
 
-    public String getSubjectName() {
-        return subject_name;
+    public void setClass_name(String class_name) {
+        this.class_name = class_name;
     }
 
     public String getSemester() {
         return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
     }
 }
