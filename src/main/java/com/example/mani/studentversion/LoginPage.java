@@ -196,6 +196,7 @@ public class LoginPage extends AppCompatActivity {
 
                                 String college_name = studentObj.getString("college_name");
                                 String branch_name  = studentObj.getString("branch_name");
+                                String branch_short_name  = studentObj.getString("branch_short_name");
                                 String class_name   = studentObj.getString("class_name");
 
                                 String dob          = studentObj.getString("dob");
@@ -213,7 +214,7 @@ public class LoginPage extends AppCompatActivity {
 
                                 session.createLoginSession(student_id,password,
                                         college_id,branch_id,class_id,
-                                        college_name,branch_name,class_name,semester,
+                                        college_name,branch_name,branch_short_name,class_name,semester,
                                         name,dob,contact_no,email,gender);
 
                                 // I think there is no need for this as it will be automatically disable

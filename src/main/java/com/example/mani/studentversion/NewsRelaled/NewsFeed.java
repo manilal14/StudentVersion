@@ -34,6 +34,7 @@ import com.example.mani.studentversion.LoginPage;
 import com.example.mani.studentversion.LoginSessionManager;
 import com.example.mani.studentversion.R;
 import com.example.mani.studentversion.TimeTableRelated.TimeTable;
+import com.example.mani.studentversion.ViewSyllabus;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -229,6 +230,7 @@ public class NewsFeed extends AppCompatActivity
                 return true;
             }
 
+
         } else if (id == R.id.nav_certificate) {
 
             if (!mLoginSession.isLoggedIn()) {
@@ -241,6 +243,7 @@ public class NewsFeed extends AppCompatActivity
                 Toast.makeText(NewsFeed.this,"You must Login first",Toast.LENGTH_SHORT).show();
                 return true;
             }
+            startActivity(new Intent(NewsFeed.this,ViewSyllabus.class));
 
         } else if (id == R.id.nav_about) {
 
@@ -290,7 +293,7 @@ public class NewsFeed extends AppCompatActivity
 
         if(skipedLogin == false) {
             if (gender.equals("0"))
-                headerProfilePic.setImageResource(R.drawable.me);
+                headerProfilePic.setImageResource(R.drawable.ic_male);
             else
                 headerProfilePic.setImageResource(R.drawable.ic_female);
         }
@@ -358,7 +361,6 @@ public class NewsFeed extends AppCompatActivity
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         Volley.newRequestQueue(this).add(stringRequest);
     }
-
 
 
 }

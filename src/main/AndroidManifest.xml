@@ -65,7 +65,12 @@
         </activity>
         <activity
             android:name=".AttendanceRelated.CheckPastAttendance"
-            android:label="Attendance">
+            android:label="Attendance" />
+        <activity
+            android:name=".ViewSyllabus"
+            android:label="Syllabus"
+            android:parentActivityName=".NewsRelaled.NewsFeed">
+
         </activity>
     </application>
 

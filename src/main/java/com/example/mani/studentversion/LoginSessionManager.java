@@ -29,6 +29,7 @@ public class LoginSessionManager {
     public static final String KEY_SEMESTER = "semester";
     public static final String KEY_COLLEGE  = "college";
     public static final String KEY_BRANCH   = "branch";
+    public static final String KEY_BRANCH_SHORT_NAME   = "branch_short_name";
     public static final String KEY_CLASS    = "class";
 
     public static final String KEY_NAME     = "name";
@@ -46,7 +47,7 @@ public class LoginSessionManager {
 
    public void createLoginSession(String student_id, String password,
                                    String college_id, String branch_id,String class_id,
-                                   String college, String branch, String class_name,String sem,
+                                   String college, String branch,String branch_short_name, String class_name,String sem,
                                    String name, String dob, String contact, String email, String gender)
 
     {
@@ -62,6 +63,7 @@ public class LoginSessionManager {
 
         editor.putString(KEY_COLLEGE,college);
         editor.putString(KEY_BRANCH,branch);
+        editor.putString(KEY_BRANCH_SHORT_NAME,branch_short_name);
         editor.putString(KEY_CLASS,class_name);
         editor.putString(KEY_SEMESTER,sem);
 
@@ -116,6 +118,7 @@ public class LoginSessionManager {
 
         user.put(KEY_COLLEGE, pref.getString(KEY_COLLEGE, null));
         user.put(KEY_BRANCH, pref.getString(KEY_BRANCH, null));
+        user.put(KEY_BRANCH_SHORT_NAME, pref.getString(KEY_BRANCH_SHORT_NAME, null));
         user.put(KEY_CLASS, pref.getString(KEY_CLASS, null));
         user.put(KEY_SEMESTER, pref.getString(KEY_SEMESTER, null));
 

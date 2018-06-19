@@ -9,12 +9,6 @@
         app:showAsAction="never"/>
 
     <item
-        android:id="@+id/action_bookmark"
-        android:orderInCategory="100"
-        android:title="Bookmark this page"
-        app:showAsAction="never"/>
-
-    <item
         android:id="@+id/menu_login_logout"
         android:orderInCategory="100"
         android:title="Login/Logout"
