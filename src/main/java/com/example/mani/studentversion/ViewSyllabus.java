@@ -20,7 +20,7 @@ import java.net.URL;
 
 import static com.example.mani.studentversion.CommonVariablesAndFunctions.BASE_URL_SYLLABUS;
 import static com.example.mani.studentversion.LoginSessionManager.KEY_BRANCH_SHORT_NAME;
-import static com.example.mani.studentversion.LoginSessionManager.KEY_CLASS_ID;
+import static com.example.mani.studentversion.LoginSessionManager.KEY_SEMESTER;
 
 
 public class ViewSyllabus extends AppCompatActivity {
@@ -28,6 +28,7 @@ public class ViewSyllabus extends AppCompatActivity {
     PDFView mPdfView;
     String SYLLABUS_URL;
     LinearLayout progressBar;
+    InputStream mInputStream = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,6 @@ public class ViewSyllabus extends AppCompatActivity {
         setContentView(R.layout.activity_view_syllabus);
 
         init();
-
         new RetrievePDFSteam().execute(SYLLABUS_URL);
     }
 
@@ -45,16 +45,19 @@ public class ViewSyllabus extends AppCompatActivity {
                 .getStudentDetailsFromSharedPreference()
                 .get(KEY_BRANCH_SHORT_NAME);
 
-        int class_id = Integer.parseInt(new LoginSessionManager(ViewSyllabus.this)
+        int semester_id = Integer.parseInt(new LoginSessionManager(ViewSyllabus.this)
                 .getStudentDetailsFromSharedPreference()
-                .get(KEY_CLASS_ID));
+                .get(KEY_SEMESTER));
 
-        //Toast.makeText(ViewSyllabus.this,branch_short_name+" "+class_id,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(ViewSyllabus.this,semester_id+"",Toast.LENGTH_SHORT).show();
 
-        SYLLABUS_URL = BASE_URL_SYLLABUS + branch_short_name + "/" + class_id+".pdf";
+        SYLLABUS_URL = BASE_URL_SYLLABUS + branch_short_name + "/" + semester_id+".pdf";
 
         mPdfView    = findViewById(R.id.pdfView);
         progressBar = findViewById(R.id.progress_bar);
+
+
+
 
     }
 
@@ -80,24 +83,24 @@ public class ViewSyllabus extends AppCompatActivity {
 
     class RetrievePDFSteam extends AsyncTask<String, Void,InputStream> {
 
+
         @Override
         protected void onPreExecute() {
+            //Toast.makeText(ViewSyllabus.this,"PreExecute",Toast.LENGTH_SHORT).show();
             progressBar.setVisibility(View.VISIBLE);
             super.onPreExecute();
         }
 
         @Override
         protected InputStream doInBackground(String... strings) {
-            InputStream inputStream = null;
 
             try {
 
                 URL url = new URL(strings[0]);
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 if(urlConnection.getResponseCode() == 200){
-                    inputStream = new BufferedInputStream(urlConnection.getInputStream());
+                    mInputStream = new BufferedInputStream(urlConnection.getInputStream());
                 }
-
 
             } catch (MalformedURLException e) {
                 e.printStackTrace();
@@ -105,20 +108,21 @@ public class ViewSyllabus extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-
-            return inputStream;
+            return mInputStream;
         }
 
         @Override
         protected void onPostExecute(InputStream inputStream) {
+            //Toast.makeText(ViewSyllabus.this,"PostExecute",Toast.LENGTH_SHORT).show();
 
-            if(inputStream!= null) {
+            if(inputStream!=null)
                 mPdfView.fromStream(inputStream).load();
-            }
-            else {
-                Toast.makeText(ViewSyllabus.this,"Something went wrong",Toast.LENGTH_SHORT).show();
-            }
+            else
+                Toast.makeText(ViewSyllabus.this,"Syllabus not available", Toast.LENGTH_SHORT).show();
             progressBar.setVisibility(View.GONE);
+
+
         }
     }
+
 }
